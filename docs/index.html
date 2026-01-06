@@ -9,30 +9,83 @@
       font-family: Arial, sans-serif;
       background: #0b0b0b;
       color: #eaeaea;
-      padding: 40px;
       max-width: 900px;
       margin: auto;
+      padding: 30px;
     }
     h1 { color: #e91e63; }
-    .box {
+    #chat {
       border: 1px solid #333;
-      padding: 20px;
-      margin-top: 20px;
+      padding: 15px;
+      height: 400px;
+      overflow-y: auto;
+      margin-bottom: 10px;
       border-radius: 8px;
+      background: #111;
+    }
+    .msg {
+      margin-bottom: 10px;
+    }
+    .user { color: #90caf9; }
+    .ai { color: #f48fb1; }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    input {
+      width: 70%;
+    }
+    button {
+      width: 25%;
+      background: #e91e63;
+      color: white;
+      border: none;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>PrimroseAI</h1>
-  <p>
-    Indigenous-led AI framework for protection, memory,
-    accountability, and rights defense.
-  </p>
 
-  <div class="box">
-    <h2>Status</h2>
-    <p>Phase 1: Website foundation active.</p>
-    <p>Phase 2: Live AI chat interface in development.</p>
-  </div>
+<h1>PrimroseAI</h1>
+<p>Indigenous-led AI for protection, memory, and accountability.</p>
+
+<div id="chat"></div>
+
+<input id="input" placeholder="Speak to PrimroseAI..." />
+<button onclick="send()">Send</button>
+
+<script>
+  const chat = document.getElementById("chat");
+
+  function addMessage(text, cls) {
+    const div = document.createElement("div");
+    div.className = "msg " + cls;
+    div.textContent = text;
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  addMessage(
+    "PrimroseAI is present. This interface is active. Live intelligence will be connected shortly.",
+    "ai"
+  );
+
+  function send() {
+    const input = document.getElementById("input");
+    const text = input.value.trim();
+    if (!text) return;
+
+    addMessage("You: " + text, "user");
+    input.value = "";
+
+    setTimeout(() => {
+      addMessage(
+        "PrimroseAI (offline mode): I acknowledge your message. Live reasoning and memory layers are not yet connected.",
+        "ai"
+      );
+    }, 600);
+  }
+</script>
+
 </body>
 </html>
