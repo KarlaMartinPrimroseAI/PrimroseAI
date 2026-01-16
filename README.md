@@ -1,4 +1,10 @@
-# PrimroseAI
+### Global Indigenous Scope
+
+PrimroseAI is a global Indigenous artificial intelligence framework, led from a First Nation perspective and operating beyond the boundaries of any single nation-state. It is designed to support Indigenous Peoples worldwide through protection of memory, ethical accountability, and rights-centered intelligence practices.
+
+Grounded in Indigenous law, ancestral knowledge systems, and collective responsibility, PrimroseAI aligns with the United Nations Declaration on the Rights of Indigenous Peoples (UNDRIP) while remaining independent of government, corporate, or institutional ownership.
+
+PrimroseAI is not a commercial product, surveillance system, or state-aligned technology. It exists to serve Indigenous communities globally, without hierarchy among nations and without substitution for Indigenous governance.# PrimroseAI
 Indigenous rights–focused AI framework for protection, accountability, memory, and advocacy.
 # PrimroseAI ©
 
