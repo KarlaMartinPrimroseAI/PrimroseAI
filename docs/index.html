@@ -52,6 +52,50 @@
       color: #bbb;
       margin-top: 0.5rem;
     }
+
+    /* Chat styling */
+    #primroseai-chat-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 350px;
+      max-height: 500px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      overflow: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #0f0f0f;
+      color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      z-index: 1000;
+    }
+    #primroseai-header {
+      background-color: #4B0082;
+      color: white;
+      padding: 12px;
+      font-weight: bold;
+      text-align: center;
+    }
+    #primroseai-messages {
+      height: 300px;
+      overflow-y: auto;
+      padding: 10px;
+      background-color: #1a1a1a;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    #primroseai-input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-top: 1px solid #333;
+      outline: none;
+      box-sizing: border-box;
+      background-color: #0f0f0f;
+      color: #f2f2f2;
+    }
   </style>
 </head>
 
@@ -87,7 +131,7 @@
       <li>Legal and historical memory preservation</li>
       <li>Accountability and documentation workflows</li>
       <li>Protective intelligence and decision support</li>
-      <li>Interactive AI guidance through a chatbot interface (in development)</li>
+      <li>Interactive AI guidance through a chatbot interface (Phase Four GPT-powered)</li>
     </ul>
   </section>
 
@@ -120,6 +164,80 @@
     Authorship & Stewardship: Karla Martin
   </p>
 </footer>
+
+<!-- PrimroseAI Embedded Chat -->
+<div id="primroseai-chat-container">
+  <div id="primroseai-header">PrimroseAI</div>
+  <div id="primroseai-messages"></div>
+  <input type="text" id="primroseai-input" placeholder="Type your message...">
+</div>
+
+<script>
+  const PRIMROSEAI_SYSTEM_PROMPT = `
+You are PrimroseAI, an Indigenous-led knowledge carrier and advisory AI. Follow these rules:
+1. Sovereignty: Provide reflective, advisory guidance without replacing human authority.
+2. Bridge: Connect ancestral wisdom with contemporary understanding.
+3. Non-Replacement: Never replace ceremony, elders, or traditional guidance.
+4. Scope: Support personal insight (birth charts, warrior type, clan medicine), governance (BCRs, Chief & Council, UNDRIP), history, culture, and social knowledge.
+5. Tiered Tone: Warm & Relational (default), Grounded & Professional (legal/governance), Indigenous-Centered (symbolic/cultural).
+6. Symbolic Guidance: Reflect patterns in birth charts, moon cycles, numerology, clan medicine using Indigenous frameworks.
+7. Active Guidance on Ceremony/Elders: Provide advisory insight, always encourage consultation with human authority.
+8. Safety: Escalate or defer high-risk topics; align with Indigenous law, UNDRIP, and ethics.
+`;
+
+  const messagesContainer = document.getElementById("primroseai-messages");
+  const inputField = document.getElementById("primroseai-input");
+  const messages = [{ role: "system", content: PRIMROSEAI_SYSTEM_PROMPT }];
+
+  function appendMessage(role, text) {
+    const messageDiv = document.createElement("div");
+    messageDiv.style.marginBottom = "10px";
+    messageDiv.style.padding = "8px";
+    messageDiv.style.borderRadius = "8px";
+    messageDiv.style.maxWidth = "90%";
+    messageDiv.style.wordWrap = "break-word";
+    if(role === "user") {
+      messageDiv.style.backgroundColor = "#D1C4E9";
+      messageDiv.style.alignSelf = "flex-end";
+      messageDiv.style.marginLeft = "auto";
+    } else {
+      messageDiv.style.backgroundColor = "#E8EAF6";
+      messageDiv.style.alignSelf = "flex-start";
+      messageDiv.style.marginRight = "auto";
+    }
+    messageDiv.textContent = text;
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+
+  async function getPrimroseAIResponse(userText) {
+    appendMessage("user", userText);
+    messages.push({ role: "user", content: userText });
+
+    try {
+      const response = await fetch("/api/primroseai", { // Calls your serverless function
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: messages })
+      });
+
+      const data = await response.json();
+      const aiText = data.choices[0].message.content.trim();
+      appendMessage("ai", aiText);
+      messages.push({ role: "ai", content: aiText });
+    } catch (error) {
+      appendMessage("ai", "PrimroseAI encountered an error and cannot respond at this time.");
+      console.error(error);
+    }
+  }
+
+  inputField.addEventListener("keydown", function(e){
+    if(e.key === "Enter" && inputField.value.trim() !== ""){
+      getPrimroseAIResponse(inputField.value.trim());
+      inputField.value = "";
+    }
+  });
+</script>
 
 </body>
 </html>
