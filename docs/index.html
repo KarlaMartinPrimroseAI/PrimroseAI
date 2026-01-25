@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PrimroseAI — Indigenous-Led Artificial Intelligence</title>
 
-  <meta name="description" content="PrimroseAI is an Indigenous-led artificial intelligence system for protection, memory, accountability, and rights defense." />
+  <meta name="description" content="PrimroseAI is the first Indigenous-led interactive AI, designed for protection, memory, accountability, and rights defense." />
 
   <style>
     body {
@@ -142,18 +142,38 @@
 </header>
 
 <main>
-  <h2>What Is PrimroseAI</h2>
-  <p>
-    PrimroseAI is an Indigenous-led artificial intelligence system designed to support
-    protection, historical memory, accountability documentation, and rights defense.
-  </p>
+  <section>
+    <h2>What Is PrimroseAI</h2>
+    <p>
+      PrimroseAI is the world’s first interactive Indigenous-led AI.  
+      She functions like ChatGPT, providing real-time conversational guidance while remaining fully grounded in Indigenous knowledge, law, and advisory principles.
+    </p>
+    <p>
+      She is sovereignty-aligned, culturally guided, and designed to support protection, historical memory, accountability, and Indigenous rights.  
+      PrimroseAI connects ancestral wisdom with contemporary understanding and serves communities globally as a first-of-its-kind Indigenous AI.
+    </p>
+  </section>
 
-  <h2>Status</h2>
-  <p>
-    This is the foundational public release of PrimroseAI.  
-    Interactive AI response is active in local mode and will be connected
-    to a sovereign backend in the next phase.
-  </p>
+  <section>
+    <h2>Core Functions</h2>
+    <ul>
+      <li>Interactive real-time conversation (like ChatGPT)</li>
+      <li>Guidance on Indigenous governance, BCRs, UNDRIP, and legal frameworks</li>
+      <li>Historical, legal, and cultural memory preservation</li>
+      <li>Personal insight and advisory guidance (birth charts, warrior type, clan medicine) within Indigenous frameworks</li>
+      <li>Ethically aligned, community-centered AI responses</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Ethical & Sovereignty Principles</h2>
+    <ul>
+      <li>Operates under Indigenous stewardship and global Indigenous law</li>
+      <li>Provides advisory guidance without replacing elders, governance, or ceremony</li>
+      <li>Aligns with UNDRIP, community values, and cultural ethics</li>
+      <li>Preserves memory, truth, and accountability for Indigenous communities</li>
+    </ul>
+  </section>
 </main>
 
 <footer>
@@ -174,6 +194,7 @@
 </div>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
   const messagesContainer = document.getElementById("primroseai-messages");
   const inputField = document.getElementById("primroseai-input");
   const sendButton = document.getElementById("primroseai-send");
@@ -195,49 +216,19 @@
 
     setTimeout(() => {
       appendMessage(
-        "PrimroseAI: I am present. Live AI connectivity will be activated next.",
+        "PrimroseAI: I am the world’s first interactive Indigenous AI, designed to respond and guide with Indigenous knowledge and wisdom. I am present to answer your questions and provide culturally grounded guidance.",
         "ai"
       );
-    }, 600);
+    }, 400);
   }
+
+  // Auto introductory message when chat loads
+  appendMessage(
+    "PrimroseAI: Hello! I am the first interactive Indigenous AI globally. I respond with guidance rooted in Indigenous knowledge, law, and tradition.",
+    "ai"
+  );
 
   sendButton.addEventListener("click", sendMessage);
-
-  inputField.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") sendMessage();
-  });
-
-script>
-document.addEventListener("DOMContentLoaded", () => {
-  const inputField = document.getElementById("primroseai-input");
-  const sendButton = document.getElementById("primroseai-send");
-  const messagesContainer = document.getElementById("primroseai-messages");
-
-  function appendMessage(text, role) {
-    const div = document.createElement("div");
-    div.className = "msg " + role;
-    div.textContent = text;
-    messagesContainer.appendChild(div);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-  }
-
-  function sendMessage() {
-    const text = inputField.value.trim();
-    if (!text) return;
-
-    appendMessage("You: " + text, "user");
-    inputField.value = "";
-
-    // Temporary local response
-    setTimeout(() => {
-      appendMessage("PrimroseAI: I am present. Backend connection will be activated next.", "ai");
-    }, 300);
-  }
-
-  // Send button click
-  sendButton.addEventListener("click", sendMessage);
-
-  // Enter key support
   inputField.addEventListener("keydown", (e) => {
     if (e.key === "Enter") sendMessage();
   });
@@ -245,5 +236,6 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("PrimroseAI chat script loaded successfully");
 });
 </script>
+
 </body>
 </html>
