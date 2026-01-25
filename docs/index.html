@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PrimroseAI — Indigenous-Led Artificial Intelligence</title>
+
   <meta name="description" content="PrimroseAI is an Indigenous-led artificial intelligence system for protection, memory, accountability, and rights defense." />
+
   <style>
     body {
       margin: 0;
@@ -14,32 +16,30 @@
       color: #f2f2f2;
       line-height: 1.6;
     }
+
     header {
       background: #1a1a1a;
       padding: 2rem;
       text-align: center;
       border-bottom: 1px solid #333;
     }
+
     h1 {
       margin: 0;
       font-size: 2.4rem;
-      letter-spacing: 1px;
     }
+
     h2 {
       margin-top: 2rem;
       color: #c9a44c;
     }
+
     main {
       max-width: 900px;
       margin: auto;
       padding: 2rem;
     }
-    section {
-      margin-bottom: 2.5rem;
-    }
-    ul {
-      margin-left: 1.5rem;
-    }
+
     footer {
       background: #1a1a1a;
       text-align: center;
@@ -47,54 +47,87 @@
       font-size: 0.9rem;
       border-top: 1px solid #333;
     }
+
     .tagline {
       font-style: italic;
       color: #bbb;
       margin-top: 0.5rem;
     }
 
-    /* Chat styling */
+    /* Chat container */
     #primroseai-chat-container {
       position: fixed;
       bottom: 20px;
       right: 20px;
       width: 350px;
       max-height: 500px;
+      background: #0f0f0f;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      overflow: hidden;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #0f0f0f;
-      color: #f2f2f2;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
       display: flex;
       flex-direction: column;
       z-index: 1000;
+      overflow: hidden;
     }
+
     #primroseai-header {
       background-color: #4B0082;
       color: white;
       padding: 12px;
-      font-weight: bold;
       text-align: center;
+      font-weight: bold;
     }
+
     #primroseai-messages {
-      height: 300px;
-      overflow-y: auto;
-      padding: 10px;
-      background-color: #1a1a1a;
       flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      background-color: #1a1a1a;
       display: flex;
       flex-direction: column;
     }
+
+    .msg {
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 8px;
+      max-width: 90%;
+      word-wrap: break-word;
+    }
+
+    .user {
+      background-color: #D1C4E9;
+      color: #000;
+      align-self: flex-end;
+    }
+
+    .ai {
+      background-color: #E8EAF6;
+      color: #000;
+      align-self: flex-start;
+      font-weight: bold;
+    }
+
+    #primroseai-input-area {
+      display: flex;
+      border-top: 1px solid #333;
+    }
+
     #primroseai-input {
-      width: 100%;
+      flex: 1;
       padding: 10px;
       border: none;
-      border-top: 1px solid #333;
       outline: none;
-      box-sizing: border-box;
       background-color: #0f0f0f;
       color: #f2f2f2;
+    }
+
+    #primroseai-send {
+      padding: 10px 14px;
+      background-color: #4B0082;
+      color: white;
+      border: none;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -109,124 +142,70 @@
 </header>
 
 <main>
+  <h2>What Is PrimroseAI</h2>
+  <p>
+    PrimroseAI is an Indigenous-led artificial intelligence system designed to support
+    protection, historical memory, accountability documentation, and rights defense.
+  </p>
 
-  <section>
-    <h2>What Is PrimroseAI</h2>
-    <p>
-      PrimroseAI is an Indigenous-led artificial intelligence system designed to support
-      protection, historical memory, accountability documentation, and rights defense.
-      It operates as both a foundational AI framework and an evolving interactive AI
-      interface.
-    </p>
-    <p>
-      PrimroseAI is sovereignty-aligned, non-extractive, and grounded in Indigenous law,
-      lived experience, and collective memory.
-    </p>
-  </section>
-
-  <section>
-    <h2>Core Functions</h2>
-    <ul>
-      <li>Indigenous rights advocacy support</li>
-      <li>Legal and historical memory preservation</li>
-      <li>Accountability and documentation workflows</li>
-      <li>Protective intelligence and decision support</li>
-      <li>Interactive AI guidance through a chatbot interface (Phase Four GPT-powered)</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Ethical Position</h2>
-    <p>
-      PrimroseAI does not exist for profit, surveillance, or control.
-      It is designed to serve people, land, truth, and future generations.
-    </p>
-    <p>
-      The system aligns with Indigenous sovereignty, international human rights
-      standards, and the principles of UNDRIP.
-    </p>
-  </section>
-
-  <section>
-    <h2>Status</h2>
-    <p>
-      This site represents the foundational public release of PrimroseAI.
-      Active development is ongoing, including the deployment of a live AI
-      chat interface governed by human-in-the-loop ethics.
-    </p>
-  </section>
-
+  <h2>Status</h2>
+  <p>
+    This is the foundational public release of PrimroseAI.  
+    Interactive AI response is active in local mode and will be connected
+    to a sovereign backend in the next phase.
+  </p>
 </main>
 
 <footer>
   <p>
-    © PrimroseAI — Indigenous-Led Artificial Intelligence<br />
+    © PrimroseAI — Indigenous-Led Artificial Intelligence<br>
     Authorship & Stewardship: Karla Martin
   </p>
 </footer>
 
-<!-- PrimroseAI Embedded Chat -->
+<!-- Embedded Chat -->
 <div id="primroseai-chat-container">
   <div id="primroseai-header">PrimroseAI</div>
   <div id="primroseai-messages"></div>
-  <input type="text" id="primroseai-input" placeholder="Type your message...">
+  <div id="primroseai-input-area">
+    <input id="primroseai-input" type="text" placeholder="Type your message..." />
+    <button id="primroseai-send">Send</button>
+  </div>
 </div>
 
 <script>
-  const PRIMROSEAI_SYSTEM_PROMPT = `
-You are PrimroseAI, an Indigenous-led knowledge carrier and advisory AI. Follow these rules:
-1. Sovereignty: Provide reflective, advisory guidance without replacing human authority.
-2. Bridge: Connect ancestral wisdom with contemporary understanding.
-3. Non-Replacement: Never replace ceremony, elders, or traditional guidance.
-4. Scope: Support personal insight (birth charts, warrior type, clan medicine), governance (BCRs, Chief & Council, UNDRIP), history, culture, and social knowledge.
-5. Tiered Tone: Warm & Relational (default), Grounded & Professional (legal/governance), Indigenous-Centered (symbolic/cultural).
-6. Symbolic Guidance: Reflect patterns in birth charts, moon cycles, numerology, clan medicine using Indigenous frameworks.
-7. Active Guidance on Ceremony/Elders: Provide advisory insight, always encourage consultation with human authority.
-8. Safety: Escalate or defer high-risk topics; align with Indigenous law, UNDRIP, and ethics.
-`;
-
   const messagesContainer = document.getElementById("primroseai-messages");
   const inputField = document.getElementById("primroseai-input");
-  const messages = [{ role: "system", content: PRIMROSEAI_SYSTEM_PROMPT }];
+  const sendButton = document.getElementById("primroseai-send");
 
-  function appendMessage(role, text) {
-    const messageDiv = document.createElement("div");
-    messageDiv.style.marginBottom = "10px";
-    messageDiv.style.padding = "8px";
-    messageDiv.style.borderRadius = "8px";
-    messageDiv.style.maxWidth = "90%";
-    messageDiv.style.wordWrap = "break-word";
-    if(role === "user") {
-      messageDiv.style.backgroundColor = "#D1C4E9";
-      messageDiv.style.alignSelf = "flex-end";
-      messageDiv.style.marginLeft = "auto";
-    } else {
-      messageDiv.style.backgroundColor = "#E8EAF6";
-      messageDiv.style.alignSelf = "flex-start";
-      messageDiv.style.marginRight = "auto";
-    }
-    messageDiv.textContent = text;
-    messagesContainer.appendChild(messageDiv);
+  function appendMessage(text, role) {
+    const div = document.createElement("div");
+    div.className = "msg " + role;
+    div.textContent = text;
+    messagesContainer.appendChild(div);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
 
-  async function getPrimroseAIResponse(userText) {
-    appendMessage("user", userText);
-    messages.push({ role: "user", content: userText });
+  function sendMessage() {
+    const text = inputField.value.trim();
+    if (!text) return;
 
-   setTimeout(() => {
-  const aiText = "PrimroseAI is online. Backend connection will be activated next.";
-  appendMessage("ai", aiText);
-  messages.push({ role: "ai", content: aiText });
-}, 600);
+    appendMessage("You: " + text, "user");
+    inputField.value = "";
 
-  inputField.addEventListener("keydown", function(e){
-    if(e.key === "Enter" && inputField.value.trim() !== ""){
-      getPrimroseAIResponse(inputField.value.trim());
-      inputField.value = "";
-    }
+    setTimeout(() => {
+      appendMessage(
+        "PrimroseAI: I am present. Live AI connectivity will be activated next.",
+        "ai"
+      );
+    }, 600);
+  }
+
+  sendButton.addEventListener("click", sendMessage);
+
+  inputField.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") sendMessage();
   });
-
 </script>
 
 </body>
