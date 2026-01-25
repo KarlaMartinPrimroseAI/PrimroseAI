@@ -206,7 +206,44 @@
   inputField.addEventListener("keydown", (e) => {
     if (e.key === "Enter") sendMessage();
   });
-</script>
 
+script>
+document.addEventListener("DOMContentLoaded", () => {
+  const inputField = document.getElementById("primroseai-input");
+  const sendButton = document.getElementById("primroseai-send");
+  const messagesContainer = document.getElementById("primroseai-messages");
+
+  function appendMessage(text, role) {
+    const div = document.createElement("div");
+    div.className = "msg " + role;
+    div.textContent = text;
+    messagesContainer.appendChild(div);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+
+  function sendMessage() {
+    const text = inputField.value.trim();
+    if (!text) return;
+
+    appendMessage("You: " + text, "user");
+    inputField.value = "";
+
+    // Temporary local response
+    setTimeout(() => {
+      appendMessage("PrimroseAI: I am present. Backend connection will be activated next.", "ai");
+    }, 300);
+  }
+
+  // Send button click
+  sendButton.addEventListener("click", sendMessage);
+
+  // Enter key support
+  inputField.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") sendMessage();
+  });
+
+  console.log("PrimroseAI chat script loaded successfully");
+});
+</script>
 </body>
 </html>
