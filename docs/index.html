@@ -237,6 +237,32 @@ You are PrimroseAI, an Indigenous-led knowledge carrier and advisory AI. Follow 
       inputField.value = "";
     }
   });
+</script><script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("userInput");
+  const sendBtn = document.getElementById("sendBtn");
+  const chatBox = document.getElementById("chatBox");
+
+  sendBtn.addEventListener("click", () => {
+    const text = input.value.trim();
+    if (!text) return;
+
+    // Show user message
+    const userMsg = document.createElement("div");
+    userMsg.textContent = "You: " + text;
+    chatBox.appendChild(userMsg);
+
+    input.value = "";
+
+    // Temporary assistant response (proof of life)
+    setTimeout(() => {
+      const aiMsg = document.createElement("div");
+      aiMsg.style.fontWeight = "bold";
+      aiMsg.textContent = "PrimroseAI: I am here and responding.";
+      chatBox.appendChild(aiMsg);
+    }, 500);
+  });
+});
 </script>
 
 </body>
