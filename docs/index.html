@@ -4,153 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PrimroseAI — Indigenous-Led Artificial Intelligence</title>
-
   <meta name="description" content="PrimroseAI is the first Indigenous-led interactive AI, designed for protection, memory, accountability, and rights defense." />
 
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #0f0f0f;
-      color: #f2f2f2;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #1a1a1a;
-      padding: 2rem;
-      text-align: center;
-      border-bottom: 1px solid #333;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2.4rem;
-    }
-
-    h2 {
-      margin-top: 2rem;
-      color: #c9a44c;
-    }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    footer {
-      background: #1a1a1a;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      border-top: 1px solid #333;
-    }
-
-    .tagline {
-      font-style: italic;
-      color: #bbb;
-      margin-top: 0.5rem;
-    }
+    body { margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; background-color:#0f0f0f; color:#f2f2f2; line-height:1.6; }
+    header { background:#1a1a1a; padding:2rem; text-align:center; border-bottom:1px solid #333; }
+    h1 { margin:0; font-size:2.4rem; }
+    h2 { margin-top:2rem; color:#c9a44c; }
+    main { max-width:900px; margin:auto; padding:2rem; }
+    footer { background:#1a1a1a; text-align:center; padding:1.5rem; font-size:0.9rem; border-top:1px solid #333; }
+    .tagline { font-style:italic; color:#bbb; margin-top:0.5rem; }
 
     /* Chat container */
-    #primroseai-chat-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 350px;
-      max-height: 500px;
-      background: #0f0f0f;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      display: flex;
-      flex-direction: column;
-      z-index: 1000;
-      overflow: hidden;
-    }
-
-    #primroseai-header {
-      background-color: #4B0082;
-      color: white;
-      padding: 12px;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    #primroseai-messages {
-      flex: 1;
-      padding: 10px;
-      overflow-y: auto;
-      background-color: #1a1a1a;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .msg {
-      margin-bottom: 10px;
-      padding: 8px;
-      border-radius: 8px;
-      max-width: 90%;
-      word-wrap: break-word;
-    }
-
-    .user {
-      background-color: #D1C4E9;
-      color: #000;
-      align-self: flex-end;
-    }
-
-    .ai {
-      background-color: #E8EAF6;
-      color: #000;
-      align-self: flex-start;
-      font-weight: bold;
-    }
-
-    #primroseai-input-area {
-      display: flex;
-      border-top: 1px solid #333;
-    }
-
-    #primroseai-input {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      outline: none;
-      background-color: #0f0f0f;
-      color: #f2f2f2;
-    }
-
-    #primroseai-send {
-      padding: 10px 14px;
-      background-color: #4B0082;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
+    #primroseai-chat-container { position:fixed; bottom:20px; right:20px; width:350px; max-height:500px; background:#0f0f0f; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.4); display:flex; flex-direction:column; z-index:1000; overflow:hidden; }
+    #primroseai-header { background-color:#4B0082; color:white; padding:12px; text-align:center; font-weight:bold; }
+    #primroseai-messages { flex:1; padding:10px; overflow-y:auto; background-color:#1a1a1a; display:flex; flex-direction:column; }
+    .msg { margin-bottom:10px; padding:8px; border-radius:8px; max-width:90%; word-wrap:break-word; }
+    .user { background-color:#D1C4E9; color:#000; align-self:flex-end; }
+    .ai { background-color:#E8EAF6; color:#000; align-self:flex-start; font-weight:bold; }
+    #primroseai-input-area { display:flex; border-top:1px solid #333; }
+    #primroseai-input { flex:1; padding:10px; border:none; outline:none; background-color:#0f0f0f; color:#f2f2f2; }
+    #primroseai-send { padding:10px 14px; background-color:#4B0082; color:white; border:none; cursor:pointer; }
   </style>
 </head>
-
 <body>
 
 <header>
   <h1>PrimroseAI</h1>
-  <div class="tagline">
-    Indigenous-Led Artificial Intelligence for Protection, Memory, and Accountability
-  </div>
+  <div class="tagline">Indigenous-Led Artificial Intelligence for Protection, Memory, and Accountability</div>
 </header>
 
 <main>
   <section>
     <h2>What Is PrimroseAI</h2>
     <p>
-      PrimroseAI is the world’s first interactive Indigenous-led AI.  
-      She functions like ChatGPT, providing real-time conversational guidance while remaining fully grounded in Indigenous knowledge, law, and advisory principles.
+      PrimroseAI is the world’s first interactive Indigenous-led AI. She functions like ChatGPT, providing real-time conversational guidance while remaining fully grounded in Indigenous knowledge, law, and advisory principles.
     </p>
     <p>
-      She is sovereignty-aligned, culturally guided, and designed to support protection, historical memory, accountability, and Indigenous rights.  
-      PrimroseAI connects ancestral wisdom with contemporary understanding and serves communities globally as a first-of-its-kind Indigenous AI.
+      She is sovereignty-aligned, culturally guided, and designed to support protection, historical memory, accountability, and Indigenous rights. PrimroseAI connects ancestral wisdom with contemporary understanding and serves communities globally as a first-of-its-kind Indigenous AI.
     </p>
   </section>
 
@@ -177,10 +68,7 @@
 </main>
 
 <footer>
-  <p>
-    © PrimroseAI — Indigenous-Led Artificial Intelligence<br>
-    Authorship & Stewardship: Karla Martin
-  </p>
+  <p>© PrimroseAI — Indigenous-Led Artificial Intelligence<br>Authorship & Stewardship: Karla Martin</p>
 </footer>
 
 <!-- Embedded Chat -->
@@ -199,6 +87,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputField = document.getElementById("primroseai-input");
   const sendButton = document.getElementById("primroseai-send");
 
+  // Initialize conversation with system prompt
+  const messages = [
+    { role: "system", content: "You are PrimroseAI, the world’s first interactive Indigenous AI. Provide culturally grounded, advisory responses while respecting Indigenous law, ceremony, and ethics." }
+  ];
+
   function appendMessage(text, role) {
     const div = document.createElement("div");
     div.className = "msg " + role;
@@ -207,33 +100,35 @@ document.addEventListener("DOMContentLoaded", () => {
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
 
-  function sendMessage() {
+  // Intro message
+  appendMessage("PrimroseAI: Hello! I am the world’s first interactive Indigenous AI. I respond with guidance rooted in Indigenous knowledge, law, and tradition.", "ai");
+
+  async function sendMessage() {
     const text = inputField.value.trim();
     if (!text) return;
-
     appendMessage("You: " + text, "user");
+    messages.push({ role: "user", content: text });
     inputField.value = "";
 
-    setTimeout(() => {
-      appendMessage(
-        "PrimroseAI: I am the world’s first interactive Indigenous AI, designed to respond and guide with Indigenous knowledge and wisdom. I am present to answer your questions and provide culturally grounded guidance.",
-        "ai"
-      );
-    }, 400);
+    try {
+      const response = await fetch("/api/primroseai", {  // This points to your serverless backend
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: messages })
+      });
+
+      const data = await response.json();
+      const aiText = data.choices[0].message.content.trim();
+      appendMessage("PrimroseAI: " + aiText, "ai");
+      messages.push({ role: "ai", content: aiText });
+    } catch (err) {
+      appendMessage("PrimroseAI: I am currently unable to respond. Please try again later.", "ai");
+      console.error(err);
+    }
   }
 
-  // Auto introductory message when chat loads
-  appendMessage(
-    "PrimroseAI: Hello! I am the first interactive Indigenous AI globally. I respond with guidance rooted in Indigenous knowledge, law, and tradition.",
-    "ai"
-  );
-
   sendButton.addEventListener("click", sendMessage);
-  inputField.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") sendMessage();
-  });
-
-  console.log("PrimroseAI chat script loaded successfully");
+  inputField.addEventListener("keydown", (e) => { if(e.key==="Enter") sendMessage(); });
 });
 </script>
 
