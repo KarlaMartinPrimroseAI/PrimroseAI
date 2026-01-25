@@ -214,22 +214,11 @@ You are PrimroseAI, an Indigenous-led knowledge carrier and advisory AI. Follow 
     appendMessage("user", userText);
     messages.push({ role: "user", content: userText });
 
-    try {
-      const response = await fetch("/api/primroseai", { // Calls your serverless function
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: messages })
-      });
-
-      const data = await response.json();
-      const aiText = data.choices[0].message.content.trim();
-      appendMessage("ai", aiText);
-      messages.push({ role: "ai", content: aiText });
-    } catch (error) {
-      appendMessage("ai", "PrimroseAI encountered an error and cannot respond at this time.");
-      console.error(error);
-    }
-  }
+   setTimeout(() => {
+  const aiText = "PrimroseAI is online. Backend connection will be activated next.";
+  appendMessage("ai", aiText);
+  messages.push({ role: "ai", content: aiText });
+}, 600);
 
   inputField.addEventListener("keydown", function(e){
     if(e.key === "Enter" && inputField.value.trim() !== ""){
@@ -237,32 +226,7 @@ You are PrimroseAI, an Indigenous-led knowledge carrier and advisory AI. Follow 
       inputField.value = "";
     }
   });
-</script><script>
-document.addEventListener("DOMContentLoaded", () => {
-  const input = document.getElementById("userInput");
-  const sendBtn = document.getElementById("sendBtn");
-  const chatBox = document.getElementById("chatBox");
 
-  sendBtn.addEventListener("click", () => {
-    const text = input.value.trim();
-    if (!text) return;
-
-    // Show user message
-    const userMsg = document.createElement("div");
-    userMsg.textContent = "You: " + text;
-    chatBox.appendChild(userMsg);
-
-    input.value = "";
-
-    // Temporary assistant response (proof of life)
-    setTimeout(() => {
-      const aiMsg = document.createElement("div");
-      aiMsg.style.fontWeight = "bold";
-      aiMsg.textContent = "PrimroseAI: I am here and responding.";
-      chatBox.appendChild(aiMsg);
-    }, 500);
-  });
-});
 </script>
 
 </body>
