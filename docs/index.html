@@ -111,7 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
     inputField.value = "";
 
     try {
-      const response = await fetch("/api/primroseai", {  // This points to your serverless backend
+      // <-- THIS IS YOUR CLOUDFLARE WORKER URL -->
+      const response = await fetch("https://primrose.primrose-ai.workers.dev/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: messages })
