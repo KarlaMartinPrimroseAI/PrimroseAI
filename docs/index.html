@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       // <-- THIS IS YOUR CLOUDFLARE WORKER URL -->
-      const response = await fetch("https://primrose.primrose-ai.workers.dev/", {
+      const response = await fetch("https://primroseai.primrose-ai.workers.dev/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: messages })
